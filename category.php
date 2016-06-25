@@ -17,8 +17,8 @@ get_header(); ?>
 				if ( have_posts() ) : $count = 0; ?>
 
 					<header class="page-header">
+						<h1 class="page-title">Category: <?php echo single_term_title( '<span class="taxonomy-term">', '</span>'); ?></h1>
 						<?php
-							the_archive_title( '<h1 class="page-title">', '</h1>' );
 							the_archive_description( '<div class="taxonomy-description">', '</div>' );
 						?>
 					</header><!-- .page-header -->

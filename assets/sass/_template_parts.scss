@@ -50,7 +50,7 @@
         font-weight: bold;
         color: $heading;
     }
-    .comments-link {
+    .reading-time {
         float: right;
         margin-right: 0px;
         @include rem('font-size', 12px);
@@ -61,7 +61,7 @@
         }
     }
     a:hover {
-        color: $primary;
+        color: $gh-light-blue;
     }
 }
 
@@ -77,7 +77,7 @@
         @include rem('font-size', 11px);
         @include rem('margin-right', 4px );
         font-weight: 600;
-        background: $primary;
+        background: $gh-light-blue;
         color: #FFFFFF;
         text-transform: uppercase;
     }
@@ -101,7 +101,7 @@
                 @include rem('padding', 0px 8px );
                 color: $text;
                 &:hover {
-                    border-color: $primary;
+                    border-color: $gh-light-blue;
                     text-decoration: none;
                 }
             }
@@ -148,11 +148,11 @@
         }
     }
     a:hover {
-        border-color: $primary;
+        border-color: $gh-light-blue;
     }
     span.current {
-        background: $primary;
-        border-color: $primary;
+        background: $gh-light-blue;
+        border-color: $gh-light-blue;
         color: #FFFFFF;
     }
     span.total-pages {
@@ -218,7 +218,7 @@
 				color: $meta_color;
 				font-size: 12px ;
 				&:hover {
-					color: $primary;
+					color: $gh-light-blue;
 				}
 				&:after {
 					content: "·";
@@ -240,7 +240,7 @@
                 a {
                     color: $text;
                     &:hover {
-                        color: $primary;
+                        color: $gh-light-blue;
                     }
                 }
 			}

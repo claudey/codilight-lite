@@ -14,7 +14,7 @@
 // Essential Styles
 .ft-menu {
     float: right;
-    @extend .clearfix;
+    // @extend .clearfix;
     ul {
         position: absolute;
         display: none;
@@ -118,9 +118,9 @@
     a {
         color: #FFFFFF;
         font-family: $font_heading;
-        padding-left: 22px;
-        padding-right: 22px;
-        font-size: 13px;
+        padding-left: 16px;
+        padding-right: 16px;
+        font-size: 16px;
         font-weight: 600;
         letter-spacing: 0.4px;
         text-transform: uppercase;
@@ -128,7 +128,7 @@
         zoom: 1;
         z-index: 50;
         &:hover {
-            color: $primary;
+            color: $gh-light-blue;
             background: #FFFFFF;
         }
     }
@@ -144,13 +144,13 @@
             background: #ffffff;
             letter-spacing: 0;
             &:hover {
-                color: $primary;
+                color: $gh-light-blue;
             }
         }
     }
 
     ul li.current-menu-item > a {
-        color: $primary;
+        color: $gh-light-blue;
     }
 
     /* Arrows */
@@ -292,9 +292,9 @@
         -webkit-transition: all 0s ease-out 0s;
     	transition: all 0s ease-out 0s;
         span {
-            background: $primary;
+            background: $gh-light-blue;
             &:before, &:after {
-                background: $primary;
+                background: $gh-light-blue;
             }
         }
     }
@@ -316,7 +316,7 @@
                     transform: translateX(3px) translateY(0px) rotate(-45deg);
         }
         &:before, &:after {
-            background: $primary;
+            background: $gh-light-blue;
         }
     }
 }
@@ -344,7 +344,7 @@
                 letter-spacing: 0;
                 border-bottom: 1px solid $border;
                 &:hover {
-                    color: $primary;
+                    color: $gh-light-blue;
                     text-decoration: none;
                     background: $meta_bg;
                 }
@@ -389,10 +389,12 @@
         font-size: 22px;
     }
     .nav-toggle-dropdown > .nav-toggle-subarrow .fa-angle-down:before {
-        content:"\f106" !important;
+        content:"\f106";
+        // content:"\f106" !important;
     }
     .nav-toggle-dropdown > ul{
-        display: block !important;
+        display: block;
+        // display: block !important;
     }
 }
 @include media-breakpoint-down(lg) {

@@ -40,8 +40,13 @@ textarea {
 /* Links
 --------------------------------------------------------------*/
 a {
-    color: $primary;
+    color: $gh-light-blue;
     text-decoration: none;
+    -webkit-transition: all .15s ease;
+       -moz-transition: all .15s ease;
+        -ms-transition: all .15s ease;
+         -o-transition: all .15s ease;
+            transition: all .15s ease;
     &:hover {
         text-decoration: none;
         color: $text;
@@ -67,7 +72,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     a {
         color: $heading;
         &:hover {
-            color: $primary;
+            color: $gh-light-blue;
             text-decoration: none;
         }
     }
@@ -159,7 +164,7 @@ blockquote {
     @include rem('margin', 20px 0px 25px);
     box-shadow: 2px 2px 13px #eeeeee;
     border: 1px solid $border;
-    border-left: 4px solid $primary;
+    border-left: 4px solid $gh-light-blue;
     @include rem('padding', 20px 25px);
     p {
         &:last-child {
@@ -204,7 +209,7 @@ pre {
     line-height: 1.7;
     @include rem('margin', 0px 0px 16px);
     @include rem('padding', 16px);
-    @extend .break;
+    // @extend .break;
 }
 details {
     summary {
@@ -273,7 +278,7 @@ fieldset{
 input[type="reset"],input[type="submit"],input[type="submit"] {
 
 	cursor: pointer;
-	background: $primary;
+	background: $gh-light-blue;
 	border: none;
 	display: inline-block;
 	color: #FFFFFF;

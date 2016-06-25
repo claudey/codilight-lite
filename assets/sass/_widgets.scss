@@ -2,14 +2,15 @@
 /*--------------------------------------------------------------
 # Widgets Area & Widget Items
 --------------------------------------------------------------*/
-/* Widget Stuffs
+/* Widget Stuff
 --------------------------------------------------------------*/
 .widget-title {
-    @include rem('font-size', 19px);
+    @include rem('font-size', 20px);
     font-weight: 500;
-    @include rem('margin-bottom', 15px);
+    color: $gh-pink;
+    @include rem('margin-bottom', 0px);
     a {
-        color: $primary;
+        color: $gh-light-blue;
         &:hover {
             color: $text;
         }
@@ -23,11 +24,11 @@
 
 .widget {
     @include rem('margin-bottom', 25px);
-    @include rem('font-size', 15px);
+    @include rem('font-size', 14px);
     a {
         color: $text;
         &:hover{
-            color: $primary;
+            color: $gh-light-blue;
             text-decoration: none;
         }
     }
@@ -42,7 +43,7 @@
 }
 .widget .widget-title {
     a {
-        color: $primary;
+        color: $gh-light-blue;
         &:hover {
             color: $text;
         }
@@ -66,7 +67,7 @@
                 left: 0px;
             }
             &:hover .cat-count {
-                background: $primary;
+                background: $gh-light-blue;
             }
             a {
                 display: block;
@@ -98,11 +99,11 @@
     .comment-author-link {
         font-weight: bold;
         a {
-            color: $primary;
+            color: $gh-light-blue;
         }
     }
     a {
-        color: $primary;
+        color: $gh-light-blue;
     }
 }
 
@@ -110,7 +111,8 @@
 --------------------------------------------------------------*/
 .widget_tag_cloud {
     a {
-        @include rem('font-size', 13px !important);
+        @include rem('font-size', 13px);
+        // @include rem('font-size', 13px !important);
         padding: 3px 10px 3px;
         // background: #bbb;
         border: 1px solid $border;
@@ -119,7 +121,7 @@
         display: inline-block;
         border-radius: 2px;
         &:hover {
-            border-color: $primary;
+            border-color: $gh-light-blue;
         }
     }
 }

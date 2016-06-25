@@ -156,7 +156,8 @@ function codilight_lite_scripts() {
 	// Styles
 	wp_enqueue_style( 'codilight-lite-google-fonts', codilight_lite_fonts_url(), array(), null );
 	wp_enqueue_style( 'codilight-lite-fontawesome', get_template_directory_uri() .'/assets/css/font-awesome.min.css', array(), '4.4.0' );
-	wp_enqueue_style( 'codilight-lite-style', get_stylesheet_uri() );
+	// wp_enqueue_style( 'codilight-lite-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'codilight-lite-custom-style', get_template_directory_uri() . '/assets/css/style.css' );
 
 	// Scripts
 	wp_enqueue_script( 'jquery' );
@@ -178,26 +179,26 @@ function codilight_lite_fonts_url() {
     $fonts_url = '';
 
  	/* Translators: If there are characters in your language that are not
-    * supported by merriweather, translate this to 'off'. Do not translate
+    * supported by open_sans, translate this to 'off'. Do not translate
     * into your own language.
     */
-    $merriweather = _x( 'on', 'Open Sans font: on or off', 'codilight-lite' );
+    $open_sans = _x( 'on', 'Open Sans font: on or off', 'codilight-lite' );
 
     /* Translators: If there are characters in your language that are not
     * supported by Raleway, translate this to 'off'. Do not translate
     * into your own language.
     */
-    $raleway = _x( 'on', 'Raleway font: on or off', 'codilight-lite' );
+    $cairo = _x( 'on', 'Cairo font: on or off', 'codilight-lite' );
 
-    if ( 'off' !== $raleway || 'off' !== $merriweather ) {
+    if ( 'off' !== $cairo || 'off' !== $open_sans ) {
         $font_families = array();
 
-        if ( 'off' !== $raleway ) {
-            $font_families[] = 'Raleway:300,400,500,600';
+        if ( 'off' !== $cairo ) {
+            $font_families[] = 'Cairo:400,700';
         }
 
-        if ( 'off' !== $merriweather ) {
-            $font_families[] = 'Merriweather';
+        if ( 'off' !== $open_sans ) {
+            $font_families[] = 'Open Sans:400,600,700';
         }
 
         $query_args = array(
@@ -224,6 +225,23 @@ function codilight_lite_admin_scripts( $hook ) {
 endif;
 add_action('admin_enqueue_scripts', 'codilight_lite_admin_scripts');
 
+function codilight_lite_estimated_time(){
+    $post = get_post();
+
+    $words = str_word_count( strip_tags( $post->post_content ) );
+    $minutes = floor( $words / 120 );
+    $seconds = floor( $words % 120 / ( 120 / 60 ) );
+
+    if ( 1 <= $minutes ) {
+        $estimated_time = $minutes . ' minute' . ($minutes == 1 ? '' : 's') . ', ' . $seconds . ' second' . ($seconds == 1 ? '' : 's');
+        }
+    else {
+        $estimated_time = $seconds . ' second' . ($seconds == 1 ? '' : 's');
+    }
+    
+    return $estimated_time;
+}
+add_action('reading_time', 'codilight_lite_estimated_time');
 
 /**
  * Custom template tags for this theme.

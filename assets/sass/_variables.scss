@@ -3,12 +3,20 @@
 // Variables
 //--------------------------------------------------------
 
+// Brand Colors
+$gh-deep-blue:	#0097C6;
+// $gh-light-blue:	#05AFEB;
+$gh-yellow:		#F4E708;
+$gh-pink:		#EC058C;
+$gh-gray:		#58585A;
+$gh-dark-gray:	#0F0E0D;
+
 // Text colors
 $text: 			#494949;
 $heading:       #333333;
 
 // Active color
-$primary: 		#46a28d;
+$gh-light-blue: #05AFEB;
 $secondary: 	#f55e4f;
 
 // Mics color
@@ -18,7 +26,7 @@ $meta_bg: 		#f8f9f9;
 
 // Fonts
 $font_text:      	 "Open Sans",Arial,sans-serif;
-$font_heading:       "Raleway",Helvetica,Arial,sans-serif;
+$font_heading:       "Cairo",Helvetica,Arial,sans-serif;
 $monaco: 			 Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 
 // Space
@@ -60,24 +68,50 @@ $gut:  25px;
 }
 
 // Use rem for better responsive
-$baseline-px: 16px;
-@mixin rem($property, $px-values) {
+// $baseline-px: 16px;
 
-	$baseline-rem: $baseline-px / 1rem;
-
-	#{$property}: $px-values;
-
-	@if type-of($px-values) == "number" {
-		#{$property}: $px-values / $baseline-rem; }
-	@else {
-		$rem-values: unquote("");
-		@each $value in $px-values {
-			@if $value == 0 {
-				$rem-values: append($rem-values, $value); }
-			@else {
-				$rem-values: append($rem-values, $value / $baseline-rem); } }
-		#{$property}: $rem-values; }
+@function parseInt($n) {
+	@return $n / ($n * 0 + 1);
 }
+
+@mixin rem($property, $values) {
+	$property: unquote("#{$property}");
+	$px : (); 
+	$rem: (); 
+
+	@each $value in $values { 
+
+		@if $value == 0 or $value == auto { 
+			$px : append($px , $value);
+			$rem: append($rem, $value);
+		}
+
+		@else {
+			$unit: unit($value);   
+			$val: parseInt($value); 
+
+			@if $unit == "px" { 
+				$px : append($px,  $value);
+				$rem: append($rem, ($val / 16 + rem));
+			}
+
+			@if $unit == "rem" { 
+				$px : append($px,  ($val * 16 + px));
+				$rem: append($rem, $value);
+			}
+		}
+	}
+
+	@if $px == $rem {     
+		#{$property}: $px;
+		}
+
+	@else {
+		#{$property}: $px;  
+		#{$property}: $rem; 
+	}
+}
+
 
 // Center block
 @mixin center-block {

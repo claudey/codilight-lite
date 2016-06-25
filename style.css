@@ -3120,7 +3120,7 @@ article.sticky .entry-title:before {
 	margin-top: 0.3125rem;
 }
 
-.block2_widget .slider-content .slider-meta .comments-link {
+.block2_widget .slider-content .slider-meta .reading-time {
 	float: none;
 }
 
@@ -3275,14 +3275,14 @@ article.sticky .entry-title:before {
 	color: #333333;
 }
 
-.entry-meta .comments-link {
+.entry-meta .reading-time {
 	float: right;
 	margin-right: 0px;
 	font-size: 12px;
 	font-size: 0.75rem;
 }
 
-.entry-meta .comments-link i {
+.entry-meta .reading-time i {
 	margin-right: 2px;
 	position: relative;
 	top: -1px;

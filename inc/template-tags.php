@@ -35,10 +35,10 @@ function codilight_lite_meta_1() {
 
 		echo $byline.$posted_on;
 		if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-			echo '<span class="comments-link">';
-			echo '<i class="fa fa-comments-o"></i>';
-			comments_popup_link( '0', '1', '%' );
-			echo '</span>';
+			echo '<span class="reading-time">';
+            echo '<i class="fa fa-clock-o"></i> ERT: ';
+            echo codilight_lite_estimated_time();
+            echo '</span>';
 		}
 
 	echo '</div>';

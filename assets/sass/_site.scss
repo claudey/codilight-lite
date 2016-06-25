@@ -5,7 +5,7 @@
 /* Top Bar */
 .site-topbar {
     line-height: 46px;
-    background: $primary;
+    background: $gh-light-blue;
     box-shadow: 0 5px 8px -1px rgba(0, 0, 0, 0.2);
     width: 100%;
     color: #FFFFFF;
@@ -30,23 +30,34 @@
         list-style: none;
     }
     .home-menu a {
-        padding: 0px 20px;
+        padding: 0px 12.5px;
         text-align: center;
         display: block;
         width: 56px;
         float: left;
         position: relative;
         margin-right: 1px;
-        i {
-            font-size: 19px;
+        content: url(../images/gharage-icon-white.svg);
+        height: 46px;
+        -webkit-transition: all .55s ease;
+           -moz-transition: all .55s ease;
+            -ms-transition: all .55s ease;
+             -o-transition: all .55s ease;
+                transition: all .55s ease;
+        img {
+            height: 25px;
             position: relative;
             top: 0px;
         }
         &:hover {
             background: #FFFFFF;
-            i {
-                color: $primary;
-            }
+            content: url(../images/gharage-icon-color.svg);
+            height: 46px;
+            -webkit-transition: all .55s ease;
+               -moz-transition: all .55s ease;
+                -ms-transition: all .55s ease;
+                 -o-transition: all .55s ease;
+                    transition: all .55s ease;
         }
         &:before {
             content: "";
@@ -136,9 +147,9 @@
         }
         &:hover {
             background: #FFFFFF;
-            color: $primary;
+            color: $gh-light-blue;
             span, i{
-                color: $primary;
+                color: $gh-light-blue;
             }
             .dropdown-content {
                 display: block;
@@ -228,17 +239,14 @@
         width: 100%;
         text-align: center;
         .site-title {
-            @include rem('font-size', 40px);
-            font-family: $font_heading;
-            color: $heading;
-            font-weight: 600;
-            text-transform: uppercase;
             @include rem('margin-bottom', 7px);
             line-height: 1.1;
             a {
                 color: $heading;
+                content: url(../images/gharage-logo.svg);
                 &:hover {
-                    color: $primary;
+                    color: $gh-light-blue;
+                    content: url(../images/gharage-logo-hover.svg);
                 }
             }
         }
@@ -255,6 +263,12 @@
 
 /* Site Main Content
 --------------------------------------------------------------*/
+
+.taxonomy-term {
+    color: $gh-pink;
+}
+
+
 
 /* Site Footer
 --------------------------------------------------------------*/
@@ -295,6 +309,17 @@
                     text-decoration: none;
                 }
             }
+        }
+    }
+}
+
+.footer-dc-image {
+
+    .footer-logo{
+        content: url(../images/devcongress-logo-gray.svg);
+
+        &:hover {
+            content: url(../images/devcongress-logo-color.svg);
         }
     }
 }
