@@ -36,7 +36,7 @@ function codilight_lite_meta_1() {
 		echo $byline.$posted_on;
 		if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			echo '<span class="reading-time">';
-            echo '<i class="fa fa-clock-o"></i> ERT: ';
+            echo '<i class="fa fa-clock-o"></i> <abbr title="Estimated Reading Time">ERT</abbr> ';
             echo codilight_lite_estimated_time();
             echo '</span>';
 		}

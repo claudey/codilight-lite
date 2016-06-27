@@ -48,8 +48,9 @@ a {
          -o-transition: all .15s ease;
             transition: all .15s ease;
     &:hover {
-        text-decoration: none;
-        color: $text;
+        // text-decoration: underline;
+        // border-bottom: 1px dotted $gh-deep-blue;
+        color: $gh-deep-blue;
     }
 }
 
@@ -224,7 +225,8 @@ abbr,
 acronym,
 dfn {
     cursor: help;
-    @include rem('font-size', 15px);
+    // @include rem('font-size', 15px);
+    font-size: inherit;
     text-transform: uppercase;
     border-bottom: 1px dotted $border;
     letter-spacing: 1px;
@@ -301,6 +303,11 @@ input[type="button"]:hover, input[type="button"]:focus,input[type="reset"]:hover
 input[type="reset"]:focus,input[type="submit"]:hover,input[type="submit"]:focus,
 button:hover,button:focus {
 	cursor:pointer;
+    -webkit-transition: all .25s ease;
+       -moz-transition: all .25s ease;
+        -ms-transition: all .25s ease;
+         -o-transition: all .25s ease;
+            transition: all .25s ease;
 }
 
 textarea {
